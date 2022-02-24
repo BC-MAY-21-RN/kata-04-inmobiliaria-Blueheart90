@@ -5,7 +5,7 @@ import Location from './Location';
 import HouseDetails from './HouseDetails';
 import Price from './Price';
 
-const inmueble = () => {
+const inmueble = ({inmueble}) => {
   return (
     <View style={styles.container}>
       <View style={styles.card}>
@@ -16,14 +16,14 @@ const inmueble = () => {
               style={styles.starSvg}
               source={require('../img/star.svg')}
             />
-            <Text style={styles.score}>3.4</Text>
+            <Text style={styles.score}>{inmueble.score}</Text>
           </View>
         </View>
         <View style={styles.info}>
-          <Text style={styles.title}>The Willows</Text>
-          <Location />
-          <HouseDetails />
-          <Price pricePerMonth="440" />
+          <Text style={styles.title}>{inmueble.name}</Text>
+          <Location address={inmueble.address} />
+          <HouseDetails details={inmueble.details} />
+          <Price pricePerMonth={inmueble.pricePerMonth} />
         </View>
       </View>
       <View style={styles.favHeart}>

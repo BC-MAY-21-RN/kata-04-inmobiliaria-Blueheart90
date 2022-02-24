@@ -2,12 +2,12 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Feature from './Feature';
 
-const HouseDetails = () => {
+const HouseDetails = ({details}) => {
   return (
     <View style={styles.container}>
-      <Feature svgName="bed" text="3" />
-      <Feature svgName="bath" text="2" />
-      <Feature svgName="landSize" text="54 m²" />
+      <Feature svgName="bed" text={details.beds} />
+      <Feature svgName="bath" text={details.baths} />
+      <Feature svgName="landSize" text={details.landSize} />
     </View>
   );
 };

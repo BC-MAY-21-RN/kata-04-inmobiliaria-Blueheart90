@@ -2,11 +2,11 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import VectorImage from 'react-native-vector-image';
 
-const Location = () => {
+const Location = ({address}) => {
   return (
     <View style={styles.container}>
       <VectorImage style={styles.svg} source={require('../img/location.svg')} />
-      <Text style={styles.locationText}>3517 W. Gray St. Utica</Text>
+      <Text style={styles.locationText}>{address}</Text>
     </View>
   );
 };
