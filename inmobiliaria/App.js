@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import Inmueble from './src/components/Inmueble';
 import inmuebles from './src/database/inmuebles';
@@ -6,8 +6,11 @@ import inmuebles from './src/database/inmuebles';
 const App = () => {
   return (
     <View style={styles.container}>
-      <Inmueble />
-      <Inmueble />
+      <FlatList
+        data={inmuebles}
+        renderItem={({item}) => <Inmueble inmueble={item} />}
+        keyExtractor={inmueble => inmueble.id}
+      />
     </View>
   );
 };
